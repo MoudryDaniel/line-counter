@@ -1,5 +1,8 @@
 import sys
 
+# Created modules
+import argument_parser as argpars
+
 def main():
     global commentRegexes    
     commentRegexes = {
@@ -8,8 +11,10 @@ def main():
         "html": r"^<!--"
         }
 
+    argpars.parseArguments(sys.argv)
+
 def error(msg):
-    print(msg, file = sys.stderr)
+    print("ERROR: " + msg, file = sys.stderr)
 
 if __name__ == "__main__":
     main()
