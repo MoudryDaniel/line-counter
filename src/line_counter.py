@@ -4,13 +4,6 @@ import sys
 import argument_parser as argpars
 
 def main():
-    global commentRegexes    
-    commentRegexes = {
-        "c": r"^\/\/",
-        "py": r"^#",
-        "html": r"^<!--"
-        }
-
     argpars.parseArguments(sys.argv)
 
 def error(msg):
