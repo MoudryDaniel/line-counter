@@ -2,9 +2,11 @@ import sys
 
 # Created modules
 import argument_parser as argpars
+import counter
 
 def main():
-    argpars.parseArguments(sys.argv)
+    target = argpars.parseArguments(sys.argv)
+    counter.count(target)
 
 def error(msg):
     print("ERROR: " + msg, file = sys.stderr)
