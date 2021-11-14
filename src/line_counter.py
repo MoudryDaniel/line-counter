@@ -3,10 +3,12 @@ import sys
 # Created modules
 import argument_parser as argpars
 import counter
+from show import showResult
 
 def main():
     target = argpars.parseArguments(sys.argv)
-    counter.count(target)
+    res = counter.count(target)
+    showResult(res)
 
 def error(msg):
     print("ERROR: " + msg, file = sys.stderr)

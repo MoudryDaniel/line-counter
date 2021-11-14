@@ -18,10 +18,13 @@ def parseArguments(argv):
             if not os.path.exists(arg):
                 error("Given path doesn't exist")
             target = arg
+
         elif opt == "-e" or opt == "--emptylines":
             globalv.noEmptyLinesOption = True
+        
         elif opt == "-c" or opt == "--comments":
             globalv.noCommentsOption = True
+        
         elif opt == "-h" or opt == "--help":
             help()
 
