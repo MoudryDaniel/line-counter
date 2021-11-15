@@ -10,8 +10,5 @@ def main():
     res = counter.count(target)
     showResult(res)
 
-def error(msg):
-    print("ERROR: " + msg, file = sys.stderr)
-
 if __name__ == "__main__":
     main()

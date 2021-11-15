@@ -14,7 +14,7 @@ def showResult(dict):
     print("")
     # Header
     printRowDivider(longestPath, longestValue)
-    printRow(longestPath, longestValue, "File", "Lines")
+    printHeader(longestPath, longestValue)
     printRowDivider(longestPath, longestValue)
 
     # Content of dictionary
@@ -26,28 +26,50 @@ def showResult(dict):
     print("Total number of lines: " + str(linesSum(dict)))
     print("")
 
+def printHeader(longestPath, longestValue):
+    longestPath = longestPath + 2 - len("File")
+    rem = longestPath % 2
+    spaces = longestPath // 2
+
+    print("|", end = "")
+    printCharSequence(" ", spaces)
+    print("File", end = "")
+    printCharSequence(" ", spaces)
+    if rem == 1: print(" ", end = "")
+    print("|", end = "")
+
+    longestValue = longestValue + 2 - len("Lines")
+    rem = longestValue % 2
+    spaces = longestValue // 2
+
+    printCharSequence(" ", spaces)
+    print("Lines", end = "")
+    printCharSequence(" ", spaces)
+    if rem == 1: print(" ", end = "")
+    print("|")
+
 def printRowDivider(longestPath, longestValue):
     print("+", end = "")
-    for _ in range(longestPath + 2):
-        print("-", end = "")
+    
+    printCharSequence("-", longestPath + 2)
     print("+", end = "")
-    for _ in range(longestValue + 2):
-        print("-", end = "")
+    printCharSequence("-", longestValue + 2)
     print("+")
 
 def printRow(longestPath, longestValue, file, lines):
     spaces = longestPath - len(file)
     print("| " + file, end = "")
     if spaces > 0:
-        for _ in range(spaces):
-            print(" ", end = "")
+        printCharSequence(" ", spaces)
 
     spaces = longestValue - len(lines)
     print(" | ", end = "")
     if spaces > 0:
-        for _ in range(spaces):
-            print(" ", end = "")
+        printCharSequence(" ", spaces)
     print(lines + " |")
+
+def printCharSequence(char, num):
+    for _ in range(num): print(char, end = "")
 
 def linesSum(dict):
     sum = 0
