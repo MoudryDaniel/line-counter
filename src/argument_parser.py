@@ -7,7 +7,7 @@ import auxiliary as aux
 
 def parseArguments(argv):
     try:
-        options, remaining = getopt.gnu_getopt(argv[1:], "t:hbce:i:d:", ["target=", "help", "blanklines", "comments", "extensions=", "ignore=", "depth="])
+        options, remaining = getopt.gnu_getopt(argv[1:], "t:bce:i:d:h", ["target=", "help", "blanklines", "comments", "extensions=", "ignore=", "depth="])
     except getopt.error as e:
         aux.error(str(e))
 
@@ -60,5 +60,17 @@ def parseExtensions(extensions, list):
             aux.error(ext + "extension doesn't match regular expression")
 
 def help():
-    pass
-    # TODO: usage
+    print("""
+    Usage:
+    python3 ./line_counter.py
+
+    Options:
+        -h, --help <-- show usage
+        -t, --target PATH <-- specify path of file or directory (default is CWD)
+        -b, --blanklines <-- exlude blank lines from the calculation
+        -c, --comments <-- exclude comments from the calculation
+        -e, --extensions COMMA-SEPARATED EXTENSION e.g. .py, .java <-- specify files to be included in the calculation
+        -i, --ignore COMMA-SEPARATED EXTENSION e.g. .py, .java <-- specify file to be ignored from the calculation
+        -d, --depth NUMBER (Integer) <-- specify depth of recursion (default is maximal depth) e.g. 0 is no recursion (only target directory)
+
+    """)
