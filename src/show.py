@@ -78,12 +78,15 @@ def printCharSequence(char, num):
     for _ in range(num): print(char, end = "")
 
 def printOptions():
-    print("Selected options: ")
+    printTitle = False
+    if aux.noBlankLinesOption or aux.noCommentsOption or aux.ignore or aux.extensions: printTitle = True
+    
+    if printTitle: print("Selected options: ")
     if aux.noBlankLinesOption: print(" -- Exclude blank lines")
     if aux.noCommentsOption: print(" -- Exclude comments")
     if aux.ignore: print(" -- Ignored extensions: "+ str(aux.ignore))
     if aux.extensions: print(" -- Possible extensions: "+ str(aux.extensions))
-    print("")
+    if printTitle: print("")
 
 def linesSum(dict):
     sum = 0
