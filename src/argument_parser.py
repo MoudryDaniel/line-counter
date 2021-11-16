@@ -64,16 +64,29 @@ def parseExtensions(extensions, list):
 def help():
     print("""
     Usage:
-    python3 ./line_counter.py
+    
+        python3 ./line_counter.py
 
     Options:
-        -h, --help <-- show usage
-        -t, --target PATH <-- specify path of file or directory (default is CWD)
-        -b, --blanklines <-- exlude blank lines from the calculation
-        -c, --comments <-- exclude comments from the calculation
-        -e, --extensions COMMA-SEPARATED EXTENSION e.g. .py, .java <-- specify files to be included in the calculation
-        -i, --ignore COMMA-SEPARATED EXTENSION e.g. .py, .java <-- specify file to be ignored from the calculation
-        -d, --depth NUMBER (Integer) <-- specify depth of recursion (default is maximal depth) e.g. 0 is no recursion (only target directory)
+        -h, --help
+            show usage
 
+        -t, --target PATH
+            specify path of file or directory (default is CWD)
+        
+        -b, --blanklines
+            exlude blank lines from the calculation
+        
+        -c, --comments
+            exclude comments from the calculation
+        
+        -e, --extensions COMMA-SEPARATED EXTENSION e.g. .py,.java
+            specify files to be included in the calculation
+        
+        -i, --ignore COMMA-SEPARATED EXTENSION e.g. .py,.java
+            specify file to be ignored from the calculation
+        
+        -d, --depth NUMBER (Integer)
+            specify depth of recursion (default is maximal depth) e.g. 0 is no recursion (only target directory)
     """)
     sys.exit(0)
