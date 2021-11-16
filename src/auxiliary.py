@@ -8,8 +8,15 @@ global commentRegexes
 commentRegexes = {
     ".c": r"^\/\/",
     ".py": r"^#",
-    ".html": r"^<!--"
-}
+    ".html": r"^<!--",
+    ".bat": r"^::",
+    ".cpp": r"\/\/",
+    ".java": r"\/\/",
+    ".pl" :r"#", 
+    ".s": r";",
+    ".sh": r"^#"
+    }
+# TODO: add multiple possibilities for comments e.g. REM for .bat
 
 global noBlankLines
 noBlankLinesOption = False
