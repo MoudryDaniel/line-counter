@@ -34,9 +34,8 @@ def parseArguments(argv):
         elif opt == "-h" or opt == "--help":
             help()
 
-    for ext in aux.extensions:
-        if ext in aux.ignore:
-            aux.error(ext + " extension is set as wanted extension and ignored extension at the same time")
+    if aux.extensions and aux.ignore:
+        aux.error("Not possible to specify wanted extensions and ignore extensions at the same time")
 
     if target is None:
         target = os.getcwd()
