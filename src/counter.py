@@ -18,13 +18,20 @@ def count(target):
     
     # Target is a file
     else:
-        res = countLines(target) 
+        extension = getExtension(target)
+        if aux.extensions and extension not in aux.extensions:
+            return lines
+
+        if aux.ignore and extension in aux.ignore:
+            return lines
+
+        res = countLines(target, extension) 
         if res is not None:
             lines[target] = res
 
     return lines
 
-def countLines(file):
+def countLines(file, extension):
     try:
         with open(file, "r") as f:
             lines = f.read().splitlines()
@@ -36,12 +43,11 @@ def countLines(file):
         line = line.strip()
 
         # No empty lines option
-        if aux.noEmptyLinesOption:
+        if aux.noBlankLinesOption:
             if line == "\0" or line == "": continue
         
         # No comments option
         if aux.noCommentsOption:
-            extension = getExtension(file)
             regex = aux.commentRegexes.get(extension)
             if regex is None:
                 aux.error("List of regular expressions doesn't contain deffinition for " + extension + " file comments")

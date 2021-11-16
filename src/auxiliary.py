@@ -11,8 +11,14 @@ commentRegexes = {
     ".html": r"^<!--"
 }
 
-global noEmptyLines
-noEmptyLinesOption = False
+global noBlankLines
+noBlankLinesOption = False
 
 global noCommentsOption
 noCommentsOption = False
+
+global extensions
+extensions = []
+
+global ignore
+ignore = []

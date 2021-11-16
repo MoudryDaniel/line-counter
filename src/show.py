@@ -1,3 +1,6 @@
+#Created modules
+import auxiliary as aux
+
 def showResult(dict):
     longestPath = len("File")
     longestValue = len("Lines")
@@ -25,6 +28,9 @@ def showResult(dict):
     # Sum of all lines
     print("Total number of lines: " + str(linesSum(dict)))
     print("")
+    
+    # Options
+    printOptions()
 
 def printHeader(longestPath, longestValue):
     longestPath = longestPath + 2 - len("File")
@@ -70,6 +76,14 @@ def printRow(longestPath, longestValue, file, lines):
 
 def printCharSequence(char, num):
     for _ in range(num): print(char, end = "")
+
+def printOptions():
+    print("Selected options: ")
+    if aux.noBlankLinesOption: print(" -- Exclude blank lines")
+    if aux.noCommentsOption: print(" -- Exclude comments")
+    if aux.ignore: print(" -- Ignored extensions: "+ str(aux.ignore))
+    if aux.extensions: print(" -- Possible extensions: "+ str(aux.extensions))
+    print("")
 
 def linesSum(dict):
     sum = 0
