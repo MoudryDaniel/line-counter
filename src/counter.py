@@ -7,14 +7,13 @@ import auxiliary as aux
 def count(target):
     lines = {}
 
-    # Depth option check
-    if aux.depth is not None:
-        if aux.depth <= 0:
-            return lines
-    
     # Target is a directory
     if os.path.isdir(target):
-        aux.depth -= 1
+        # Depth option check
+        if aux.depth is not None:
+            if aux.depth <= 0:
+                return lines
+            aux.depth -= 1
         
         targets = os.listdir(target)
 

@@ -1,6 +1,7 @@
 import os
 import getopt
 import re
+import sys
 
 # Created modules
 import auxiliary as aux
@@ -36,8 +37,9 @@ def parseArguments(argv):
 
         elif opt == "-d" or opt == "--depth":
             if not re.search(r"^[0-9]+$", arg):
-                aux.error("Value of " + opt + " has to be a number (Integer)")
-            aux.depth = int(arg) + 2
+                aux.error("Value of " + opt + " has to be a number >= 0 (Integer)")
+            aux.depthOriginalValue = int(arg)
+            aux.depth = aux.depthOriginalValue + 1
 
         elif opt == "-h" or opt == "--help":
             help()
@@ -74,3 +76,4 @@ def help():
         -d, --depth NUMBER (Integer) <-- specify depth of recursion (default is maximal depth) e.g. 0 is no recursion (only target directory)
 
     """)
+    sys.exit(0)

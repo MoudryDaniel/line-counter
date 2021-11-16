@@ -79,13 +79,14 @@ def printCharSequence(char, num):
 
 def printOptions():
     printTitle = False
-    if aux.noBlankLinesOption or aux.noCommentsOption or aux.ignore or aux.extensions: printTitle = True
+    if aux.noBlankLinesOption or aux.noCommentsOption or aux.ignore or aux.extensions or (aux.depth is not None): printTitle = True
     
     if printTitle: print("Selected options: ")
     if aux.noBlankLinesOption: print(" -- Exclude blank lines")
     if aux.noCommentsOption: print(" -- Exclude comments")
     if aux.ignore: print(" -- Ignored extensions: "+ str(aux.ignore))
     if aux.extensions: print(" -- Possible extensions: "+ str(aux.extensions))
+    if aux.depth is not None: print(" -- Recursion depth = " + str(aux.depthOriginalValue))
     if printTitle: print("")
 
 def linesSum(dict):
