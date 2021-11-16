@@ -7,8 +7,15 @@ import auxiliary as aux
 def count(target):
     lines = {}
 
+    # Depth option check
+    if aux.depth is not None:
+        if aux.depth <= 0:
+            return lines
+    
     # Target is a directory
     if os.path.isdir(target):
+        aux.depth -= 1
+        
         targets = os.listdir(target)
 
         for targ in targets:
@@ -19,9 +26,11 @@ def count(target):
     # Target is a file
     else:
         extension = getExtension(target)
+        # Extensions option check
         if aux.extensions and extension not in aux.extensions:
             return lines
 
+        # Ignore option check
         if aux.ignore and extension in aux.ignore:
             return lines
 
@@ -42,11 +51,11 @@ def countLines(file, extension):
     for line in lines:
         line = line.strip()
 
-        # No empty lines option
+        # No empty lines option check
         if aux.noBlankLinesOption:
             if line == "\0" or line == "": continue
         
-        # No comments option
+        # No comments option check
         if aux.noCommentsOption:
             regex = aux.commentRegexes.get(extension)
             if regex is None:

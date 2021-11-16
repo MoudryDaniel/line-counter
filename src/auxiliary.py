@@ -29,3 +29,6 @@ extensions = []
 
 global ignore
 ignore = []
+
+global depth
+depth = None

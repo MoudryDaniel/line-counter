@@ -7,7 +7,7 @@ import auxiliary as aux
 
 def parseArguments(argv):
     try:
-        options, remaining = getopt.gnu_getopt(argv[1:], "t:hbce:i:", ["target=", "help", "blanklines", "comments", "extensions=", "ignore="])
+        options, remaining = getopt.gnu_getopt(argv[1:], "t:hbce:i:d:", ["target=", "help", "blanklines", "comments", "extensions=", "ignore=", "depth="])
     except getopt.error as e:
         aux.error(str(e))
 
@@ -33,6 +33,11 @@ def parseArguments(argv):
 
         elif opt == "-i" or opt == "--ignore":
             parseExtensions(arg, aux.ignore)
+
+        elif opt == "-d" or opt == "--depth":
+            if not re.search(r"^[0-9]+$", arg):
+                aux.error("Value of " + opt + " has to be a number (Integer)")
+            aux.depth = int(arg) + 2
 
         elif opt == "-h" or opt == "--help":
             help()
