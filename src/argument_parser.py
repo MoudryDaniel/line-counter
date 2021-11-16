@@ -6,7 +6,10 @@ import re
 import auxiliary as aux
 
 def parseArguments(argv):
-    options, remaining = getopt.gnu_getopt(argv[1:], "t:hbce:i:", ["target=", "help", "blanklines", "comments", "extensions=", "ignore="])
+    try:
+        options, remaining = getopt.gnu_getopt(argv[1:], "t:hbce:i:", ["target=", "help", "blanklines", "comments", "extensions=", "ignore="])
+    except getopt.error as e:
+        aux.error(str(e))
 
     if len(remaining) > 0:
         aux.error("Unknown arguments " + str(remaining))
