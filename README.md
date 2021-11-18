@@ -7,7 +7,7 @@ Program to count lines of a file or files in a directory structure
 Created in version 3.9.7
 
 + :construction: Still WIP
-+ :computer: Feel free to frok this repository
++ :computer: Feel free to fork this repository
 + :star: If you like this app star the repository
 
 ## Table of Contents <!-- omit in toc -->
