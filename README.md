@@ -8,7 +8,7 @@ Created in version 3.9.7
 
 + :construction: Still WIP
 + :computer: Feel free to frok this repository
-+ :star: If you like this app star this repository
++ :star: If you like this app star the repository
 
 ## Table of Contents <!-- omit in toc -->
 - [Usage](#usage)
