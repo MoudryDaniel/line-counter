@@ -51,7 +51,7 @@ Created in version 3.9.7
 <br>
 
 + `-e, --extension EXTENSIONS`, `-i, --ignore EXTENSIONS`
-  + format of `EXTENSIONS`
+  + format of `EXTENSIONS`:
     + **comma-separated** and **without spaces**
     + example: *.py,.java,.html*
 
