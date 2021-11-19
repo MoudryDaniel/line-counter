@@ -7,8 +7,8 @@ Program to count lines of a file or files in a directory structure
 Created in version 3.9.7
 
 + :construction: Still WIP
-+ :computer: Feel free to fork this repository
-+ :star: If you like this app star the repository
++ :computer: Feel free to fork this repository.
++ :star: If you like this app, star the repository.
 
 ## Table of Contents <!-- omit in toc -->
 - [Usage](#usage)
@@ -52,8 +52,8 @@ Created in version 3.9.7
 
 + `-e, --extension EXTENSIONS`, `-i, --ignore EXTENSIONS`
   + format of `EXTENSIONS`
-  + **comma-separated** and **without spaces**
-  + example: *.py,.java,.html*
+    + **comma-separated** and **without spaces**
+    + example: *.py,.java,.html*
 
 <br>
 
