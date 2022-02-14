@@ -50,9 +50,17 @@ Created in version 3.9.7
 
 <br>
 
-+ -c, --comments
++ `-c, --comments`
   + supported extensions:
-    + .c, .py, .html, .bat, .cpp, .java, .pl, .s, .sh
+    + .c
+    + .py
+    + .html
+    + .bat
+    + .cpp
+    + .java
+    + .pl
+    + .s
+    + .sh
   + **multiline comments** are currently **not supported**
 
 + `-e, --extension EXTENSIONS`, `-i, --ignore EXTENSIONS`
