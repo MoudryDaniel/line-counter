@@ -61,7 +61,7 @@ Created in version 3.9.7
     + .pl
     + .s
     + .sh
-  + **multiline comments** are currently **not supported**
+  + **Multiline comments** are currently **not supported**.
 
 + `-e, --extension EXTENSIONS`, `-i, --ignore EXTENSIONS`
   + format of `EXTENSIONS`:
